@@ -6,8 +6,11 @@ const path = require("path");
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    alias: {
+    alias: { // 别名
       "@": path.resolve(__dirname, "src"),
     },
+  },
+  server: {
+    port: 5000, // 启动的端口号
   },
 });

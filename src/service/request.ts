@@ -1,7 +1,9 @@
 import axios from "axios";
 
 // 创建 axios 实例
-const ins = axios.create();
+const ins = axios.create({
+  baseURL: "http://127.0.0.1:3000", // 请求的基路径
+});
 
 // 请求拦截器
 ins.interceptors.request.use((config) => {

@@ -4,7 +4,6 @@ export * from "./api/banner";
 
 
 // 批量导出有问题 缺少类型约束
-// import { getBanner } from "./api/banner";
 
 // const apis = import.meta.globEager("./api/*.ts");
 // let modules = {};
@@ -14,6 +13,6 @@ export * from "./api/banner";
 //   });
 // }
 // console.log(modules)
-// console.log(modules.getBanner)
+// console.log(modules.getBanner())
 
 // export default modules;
