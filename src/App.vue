@@ -1,21 +1,34 @@
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import HelloWorld from './components/HelloWorld.vue'
+import MyHeader from "@/components/layout/myHeader.vue";
+import MyFooter from "@/components/layout/myFooter.vue";
+import Layout from "@/components/layout/index.vue";
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <Layout>
+    <!-- 头部header区域 -->
+    <template #header>
+      <MyHeader />
+    </template>
+
+    <!-- 中间根据路由地址变化 -->
+    <template #default>
+      <RouterView></RouterView>
+    </template>
+
+    <!-- 底部footer区域 -->
+    <template #footer>
+      <MyFooter />
+    </template>
+  </Layout>
 </template>
 
-<style>
+<style lang="less">
+body,
+html,
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
 }
 </style>

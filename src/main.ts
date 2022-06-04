@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import route from "./router";
 import store from "@/store";
-
+import 'normalize.css'
 // 创建 app 实例
 const app = createApp(App);
 // 使用 插件
