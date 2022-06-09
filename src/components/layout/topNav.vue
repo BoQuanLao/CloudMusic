@@ -10,6 +10,7 @@ const setARef = (e: Event): VNodeRef => {
 // 处理 Nav 被选中的class样式
 const handleSwitchNav = (e: MouseEvent) => {
   e.preventDefault();
+  // 清除之前的样式
   for (let i = 0; i < aRef.value.length; i++) {
     aRef.value[i].className = "";
   }
@@ -27,22 +28,40 @@ const handleSwitchNav = (e: MouseEvent) => {
       </h1>
       <ul @click="handleSwitchNav" class="m-nav">
         <li>
-          <a :ref="setARef" class="fst" href="">发现音乐</a>
+          <a :ref="setARef" class="fst" href="">
+            发现音乐
+            <sub class="bottom-triange hid">&nbsp;</sub>
+          </a>
         </li>
         <li>
-          <a :ref="setARef" href="">我的音乐</a>
+          <a :ref="setARef" href="">
+            我的音乐
+            <sub class="bottom-triange hid">&nbsp;</sub>
+          </a>
         </li>
         <li>
-          <a :ref="setARef" href=""> 关注 </a>
+          <a :ref="setARef" href="">
+            关注
+            <sub class="bottom-triange hid">&nbsp;</sub>
+          </a>
         </li>
         <li>
-          <a :ref="setARef" href=""> 商城 </a>
+          <a :ref="setARef" href="">
+            商城
+            <sub class="bottom-triange hid">&nbsp;</sub>
+          </a>
         </li>
         <li>
-          <a :ref="setARef" href=""> 音乐人 </a>
+          <a :ref="setARef" href="">
+            音乐人
+            <sub class="bottom-triange hid">&nbsp;</sub>
+          </a>
         </li>
         <li>
-          <a :ref="setARef" href="">下载客户端</a>
+          <a :ref="setARef" href="">
+            下载客户端
+            <sub class="bottom-triange hid">&nbsp;</sub>
+          </a>
           <sup class="hot">&nbsp;</sup>
         </li>
       </ul>
@@ -92,7 +111,7 @@ const handleSwitchNav = (e: MouseEvent) => {
       }
     }
     .m-nav {
-      width: 508px;
+      width: 550px;
       display: flex;
       align-items: center;
       li {
@@ -100,6 +119,9 @@ const handleSwitchNav = (e: MouseEvent) => {
         height: 70px;
         line-height: 70px;
         font-size: 14px;
+        .hid {
+          position: absolute;
+        }
         a {
           display: block;
           padding: 0 19px;
@@ -121,9 +143,19 @@ const handleSwitchNav = (e: MouseEvent) => {
           background: url("../../assets/topbar.png");
           background-position: -190px 0;
         }
-        a.fst {
+        .fst {
           background: #000;
           color: #fff;
+          .bottom-triange {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -1px;
+            width: 12px;
+            height: 7px;
+            background-image: url(../../assets/topbar.png);
+            background-position: -226px 0;
+          }
         }
       }
     }
